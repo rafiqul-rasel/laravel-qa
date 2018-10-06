@@ -17,4 +17,8 @@ class question extends Model
         $this->attributes['title']=ucfirst($value);
         $this->attributes['slug']=str_slug($value);
     }
+
+    public function getCreatedDateAttribute(){
+        return $this->created_at->diffForHumans();
+        }
 }
